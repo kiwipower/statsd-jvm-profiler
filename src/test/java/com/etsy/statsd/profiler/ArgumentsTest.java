@@ -2,6 +2,7 @@ package com.etsy.statsd.profiler;
 
 import com.etsy.statsd.profiler.profilers.CPUTracingProfiler;
 import com.etsy.statsd.profiler.profilers.MemoryProfiler;
+import com.etsy.statsd.profiler.profilers.ThreadProfiler;
 import com.etsy.statsd.profiler.reporter.InfluxDBReporter;
 import com.etsy.statsd.profiler.reporter.StatsDReporter;
 import org.junit.Rule;
@@ -71,6 +72,7 @@ public class ArgumentsTest {
         Set<Class<? extends Profiler>> expected = new HashSet<>();
         expected.add(CPUTracingProfiler.class);
         expected.add(MemoryProfiler.class);
+        expected.add(ThreadProfiler.class);
 
         assertEquals(expected, arguments.profilers);
     }

@@ -2,6 +2,7 @@ package com.etsy.statsd.profiler;
 
 import com.etsy.statsd.profiler.profilers.CPUTracingProfiler;
 import com.etsy.statsd.profiler.profilers.MemoryProfiler;
+import com.etsy.statsd.profiler.profilers.ThreadProfiler;
 import com.etsy.statsd.profiler.reporter.Reporter;
 import com.etsy.statsd.profiler.reporter.StatsDReporter;
 import com.google.common.base.Optional;
@@ -99,6 +100,7 @@ public final class Arguments {
         if (profilerArg == null) {
             parsedProfilers.add(CPUTracingProfiler.class);
             parsedProfilers.add(MemoryProfiler.class);
+            parsedProfilers.add(ThreadProfiler.class);
         } else {
             for (String p : profilerArg.split(":")) {
                 try {
