@@ -25,13 +25,13 @@ public final class TagUtil {
     public static Map<String, String> getGlobalTags(Map<String, String> tags) {
         // Add the jvm name, pid, hostname as tags to help identify different processes
         final String jvmName = ManagementFactory.getRuntimeMXBean().getName();
-        tags.put(JVM_NAME_TAG, jvmName);
+//        tags.put(JVM_NAME_TAG, jvmName);
         int atIndex = jvmName.indexOf("@");
         if (atIndex > 0) {
-            tags.put(PID_TAG, jvmName.substring(0, atIndex));
+//            tags.put(PID_TAG, jvmName.substring(0, atIndex));
             tags.put(HOSTNAME_TAG, jvmName.substring(atIndex + 1));
         } else {
-            tags.put(PID_TAG, UNKNOWN);
+//            tags.put(PID_TAG, UNKNOWN);
             tags.put(HOSTNAME_TAG, UNKNOWN);
         }
 

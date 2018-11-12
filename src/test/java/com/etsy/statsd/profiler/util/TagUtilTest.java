@@ -53,9 +53,9 @@ public class TagUtilTest {
         Map<String, String> globalTags = new HashMap<>();
         TagUtil.getGlobalTags(globalTags);
         Set<String> expectedKeys = new HashSet<>();
-        expectedKeys.add(TagUtil.PID_TAG);
+//        expectedKeys.add(TagUtil.PID_TAG);
         expectedKeys.add(TagUtil.HOSTNAME_TAG);
-        expectedKeys.add(TagUtil.JVM_NAME_TAG);
+//        expectedKeys.add(TagUtil.JVM_NAME_TAG);
 
         assertEquals(expectedKeys, globalTags.keySet());
     }
